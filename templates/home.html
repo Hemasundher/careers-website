@@ -14,6 +14,7 @@
       height: 360px;
       width:100%;
       object-fit:cover;
+      margin-bottom:16px;
 
       
     }
@@ -23,16 +24,36 @@
   
 <body>
 
+  {% include 'nav2.html' %}
+
+  <img class='img-fluid' id='banner'
+    src='/static/banner.jpg' >
+  
   <div class='container'>
     <h1 class='text-center mt-2 mb-4' >Career page</h1>
-    <img class='img-fluid' id='banner'
-      src='https://60513fcb-94ff-461e-aff6-e0988b5d3789-00-1cj6571jbcdqx.janeway.replit.dev/static/banner.jpg' >
   
     <h2 class='text-center mt-2 mb-4'>About company</h2>
-    <p class='lead'>
-    If you need assistance drafting content for your company's career page, I'd be happy to help. Could you provide more details about your company and the type of content you're looking to add? For example, are you looking to describe your company culture, job opportunities, benefits, or something else? Any specific information or tone you'd like to convey would also be helpful.</p>
-  
-    <h2 class='text-center mt-2 mb-4'>Job Openings</h2>
+
+    <div class='row' style="margin-bottom:16px">
+
+      <div class='col-md-6'>
+        
+        <p class='lead'>
+        If you need assistance drafting content for your company's career page, I'd be happy to help. Could you provide           more details about your company and the type of content you're looking to add? For example, are you looking to           describe your company culture, job opportunities, benefits, or something else? Any specific information or tone           you'd like to convey would also be helpful.
+        </p>
+      </div>
+      
+      <div class='d-none d-md-block col-md-6'>
+        <img src='static/people_working.jpg' style='height:320px;border-radius:4px;'>
+        
+      </div>
+      
+      
+      </div>
+      
+        <h2 class='text-center mt-2 mb-4'>Job Openings</h2>
+
+    
   
     <div>
       
@@ -45,15 +66,19 @@
     </div>
 
     <div class='text-center'>
-    <button class='btn btn-primary btn-lg'>contact us</button>
-      <p class='mt-4'> copyright 2024</p>
+    <a href='mailto:hemasundher0000@gmail.com?subject=query related to job openings' class='btn btn-primary btn-lg'>contact us</a>
+
     </div>
   </div>
+
+
+
+  {% include 'footer.html' %}
+
   
 </body>
 
-
-  
+ 
 
   
 </html>
