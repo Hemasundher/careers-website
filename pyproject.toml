@@ -9,6 +9,7 @@ packages = [{include = "careers_website"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "3.0.2"
+mysql-connector-python = "^8.3.0"
 
 
 [build-system]
