@@ -60,6 +60,35 @@ def get_job_details_jobid(id):
 
 
 
+(2,'hema','hema@gmail.com','link@url','btech','fresher','link@url');
+
+def insert_into_application(job_id,data):
+  cursor=mydb.cursor(dictionary=True)
+
+
+
+
+
+  sql="INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+
+  # Assuming you're using MySQL's Python connector
+  cursor.execute(sql, (
+      job_id,
+      data['fullname'],
+      data['email'],
+      data['linkedin_url'],
+      data['education'],
+      data['work_experience'],
+      data['resume_url']
+  ))
+
+  mydb.commit()
+
+
+
+
+
+
 """
 mycursor.execute("SELECT * FROM jobs")
 

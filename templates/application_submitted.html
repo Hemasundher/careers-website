@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Careers</title>
+    {% include 'bootstrap.html' %}
+  </head>
+
+<body>
+  {% include 'banner.html' %}
+  {% include 'nav2.html' %}
+
+  <div class='container'>
+    <h1 class='text-center mt-2 mb-4' >Career</h1>
+  
+    <p>your application for <b>{{job['title']}}</b> has been submitted</p>
+
+    <b>Full name</b>
+    <div class='mb-2'>{{data['fullname']}}</div>
+
+    <b>Email</b>
+    <div class='mb-2'>{{data['email']}}</div>
+
+    <b>Linkedin URL</b>
+    <div class='mb-2'>{{data['linkedin_url']}}</div>
+
+    <b>Education URL</b>
+    <div class='mb-2'>{{data['education']}}</div>
+
+    <b>Work experience</b>
+    <div class='mb-2'>{{data['work_experience']}}</div>
+    
+
+  
+  </div>
+  
+  
+  {% include 'footer.html' %}
+
+</body>
+  
+</html>

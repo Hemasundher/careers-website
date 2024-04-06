@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify,url_for
+from flask import Flask, render_template, jsonify,url_for,request
 from database import *
 
 app = Flask(__name__)
@@ -59,7 +59,18 @@ def show_job(id):
   return render_template('jobpage.html', job=job)
   
   
+@app.route('/job/<id>/apply',methods=['post'])
+def apply_to_job(id):
+  data=request.form
+  job=get_job_details_jobid(id)
+  insert_into_application(id,data)
+  return render_template('application_submitted.html',data=data,job=job)
   
+
+
+
+
+
 
 
 if __name__ == "__main__":
