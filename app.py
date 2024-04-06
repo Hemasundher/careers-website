@@ -1,5 +1,5 @@
-from flask import Flask, render_template, jsonify
-from database import get_jobs_from_mydb
+from flask import Flask, render_template, jsonify,url_for
+from database import *
 
 app = Flask(__name__)
 
@@ -48,6 +48,18 @@ def list_jobs():
   jobs=get_jobs_from_mydb()
 
   return jsonify(jobs)
+
+
+@app.route("/job/<id>")
+def show_job(id):
+  job=get_job_details_jobid(id)
+
+  if job==None:
+    return "Job Not Found",404
+  return render_template('jobpage.html', job=job)
+  
+  
+  
 
 
 if __name__ == "__main__":

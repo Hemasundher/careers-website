@@ -23,6 +23,8 @@ connect_args={
 
 import mysql.connector as conn
 import os
+
+from mysql.connector.types import ResultType
 mydb = conn.connect(
     user='root',
     password=os.environ['db_password'],
@@ -44,6 +46,19 @@ def get_jobs_from_mydb():
   result = cursor.fetchall()
 
   return result
+
+
+
+def get_job_details_jobid(id):
+  cursor=mydb.cursor(dictionary=True)
+  sql=f"select * from jobs where id={id}"
+  cursor.execute(sql)
+  result = cursor.fetchall()
+  if len(result)==0:
+    return None
+  return result[0]
+
+
 
 """
 mycursor.execute("SELECT * FROM jobs")
